@@ -14,7 +14,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
-    port: 3000
+    port: 3000,
+    historyApiFallback: true,
   },
   plugins: [
     new HTMLWebpackPlugin({template: "./src/index.html"}),
