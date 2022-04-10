@@ -1,10 +1,19 @@
+interface IComments  {
+    id: number;
+    name: string;
+    body: string;
+}
+
 export interface ICommentsState {
-    comments: any[];
+    comments: IComments[];
+    loading: boolean;
+    error: string | null;
 }
 
 export enum CommentsActionTypes {
     FETCH_COMMENTS = 'FETCH_COMMENTS',
     FETCH_COMMENTS_SUCCESS = "FETCH_COMMENTS_SUCCESS",
+    FETCH_COMMENTS_ERROR = "FETCH_COMMENTS_ERROR",
 }
 
 interface IFetchCommentsAction {
@@ -13,7 +22,12 @@ interface IFetchCommentsAction {
 
 interface IFetchCommentSuccess {
     type: CommentsActionTypes.FETCH_COMMENTS_SUCCESS;
-    payload: any[];
+    payload: IComments[];
 }
 
-export type CommentsAction = IFetchCommentsAction | IFetchCommentSuccess
+interface IFetchCommentError {
+    type: CommentsActionTypes.FETCH_COMMENTS_ERROR;
+    payload: string;
+}
+
+export type CommentsAction = IFetchCommentsAction | IFetchCommentSuccess | IFetchCommentError

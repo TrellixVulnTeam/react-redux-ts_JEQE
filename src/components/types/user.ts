@@ -1,5 +1,11 @@
+interface IUser{
+    id: number,
+    name: string,
+    email: string,
+}
+
 export interface IUserState {
-    users: any[];
+    users: IUser[]
     loading: boolean;
     error: null | string;
 }
@@ -16,7 +22,7 @@ interface IFetchUsersAction {
 
 interface IFetchUsersSuccess {
     type: UserActionTypes.FETCH_USERS_SUCCESS;
-    payload: any[];
+    payload: IUser[];
 }
 
 interface IFetchUsersError {

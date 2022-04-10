@@ -1,10 +1,11 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch } from "react-redux";
 import { UserActionTypes } from "./types/user";
 
 const UserList: FC = () => {
-    const {users, error, loading} = useTypedSelector(state => state.user);
+    const { users, error, loading } = useTypedSelector(state => state.user);
+
 
     const dispatch = useDispatch()
 
@@ -17,9 +18,9 @@ const UserList: FC = () => {
     }
     return (
         <div>
-            <button onClick={() => dispatch({type: UserActionTypes.FETCH_USERS})}>Получить пользователей</button>
+            <button type="button" onClick={() => dispatch({type: UserActionTypes.FETCH_USERS})}>Получить пользователей</button>
             {users.map((user) => (
-                <div key={user.id}>{user.name}</div>
+                <div key={user.id}>{user.id}-{user.name}</div>
             ))}
         </div>
     );
