@@ -13,7 +13,7 @@ export const todosReducer = (state = initialState, action: TodoAction): TodosSta
         case TodosActionsTypes.FETCH_TODOS:
             return { ...state, loading: false }
         case TodosActionsTypes.FETCH_TODOS_SUCCESS:
-            return { ...state, loading: true, todos: action.payload }
+            return { ...state, loading: true, todos: action.payload}
         case TodosActionsTypes.FETCH_TODOS_ERROR:
             return { ...state, loading: false, error: action.payload }
         case TodosActionsTypes.SET_TODO_PAGE:
@@ -22,4 +22,5 @@ export const todosReducer = (state = initialState, action: TodoAction): TodosSta
             return state
     }
 }
+
 

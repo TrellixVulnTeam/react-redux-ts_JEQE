@@ -5,9 +5,7 @@ import { UserActionTypes } from "./types/user";
 
 const UserList: FC = () => {
     const { users, error, loading } = useTypedSelector(state => state.user);
-
-
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     if (loading) {
         return <h1>Идёт загрузка</h1>

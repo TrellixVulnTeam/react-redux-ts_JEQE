@@ -24,7 +24,7 @@ interface FetchTodoAction {
 
 interface FetchTodoSuccessAction {
     type: TodosActionsTypes.FETCH_TODOS_SUCCESS;
-    payload: ITodos[]
+    payload: ITodos[];
 }
 
 interface FetchTodoErrorAction {
