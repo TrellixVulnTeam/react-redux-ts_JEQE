@@ -1,6 +1,6 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import axios from "axios";
-import { CommentsActionTypes, ICommentsState } from "../../types/comments";
+import { CommentsActionTypes, ICommentsState } from "../types/comments";
 
 const fetchComments = async () => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/comments?_limit=10');

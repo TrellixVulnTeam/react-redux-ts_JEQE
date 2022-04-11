@@ -1,18 +1,16 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from "axios";
-import { ITodos, TodoAction, TodosActionsTypes } from "../../types/todos";
+import { ITodos, TodoAction, TodosActionsTypes } from "../types/todos";
 
 export const fetchTodos = async (page = 1, limit = 10) => {
-    console.log(page)
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos', {
+    const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos', {
         params: {
             _page: page,
             _limit: limit,
         }
     });
 
-    const data = response.data
-    return data;
+    return data
 }
 
 export function setTodoPage (page: number): TodoAction {
@@ -22,7 +20,7 @@ export function setTodoPage (page: number): TodoAction {
 function* todosWorker() {
     const todos:Promise<ITodos[]> = yield call(fetchTodos);
 
-    yield put({type: TodosActionsTypes.FETCH_TODOS_SUCCESS, payload: todos });
+    yield put({ type: TodosActionsTypes.FETCH_TODOS_SUCCESS, payload: todos });
 }
 
 export function* todosWatcher(){

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { useDispatch } from "react-redux";
-import { CommentsActionTypes } from "./types/comments";
+import { CommentsActionTypes } from "../store/types/comments";
 
 const CommentsList = () => {
     const { comments, loading, error } = useTypedSelector(state => state.comments);

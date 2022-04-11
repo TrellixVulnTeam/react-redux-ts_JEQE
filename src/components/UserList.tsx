@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { useDispatch } from "react-redux";
-import { UserActionTypes } from "./types/user";
+import { UserActionTypes } from "../store/types/user";
 
 const UserList: FC = () => {
     const { users, error, loading } = useTypedSelector(state => state.user);

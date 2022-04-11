@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
-import { IUserState, UserActionTypes } from "../../types/user";
+import { IUserState, UserActionTypes } from "../types/user";
 import axios from "axios";
 
 const fetchUsers = async () => {

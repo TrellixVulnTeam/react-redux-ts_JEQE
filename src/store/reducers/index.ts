@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import userReducer from "./users/userReducer";
-import commentsReducer from "./comments/commentsReducer";
-import { todosReducer } from "./todos/todosReducer";
+import userReducer from "./userReducer";
+import commentsReducer from "./commentsReducer";
+import { todosReducer } from "./todosReducer";
 
 export const rootReducers = combineReducers({
     user: userReducer,
