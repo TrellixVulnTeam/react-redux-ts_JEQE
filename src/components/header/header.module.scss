@@ -1,1 +1,14 @@
+.header{
+  background: #75c1ff;
+  font-size: 20px;
+  position: static;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 
+  .itemLink{
+    color: #eee;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+}

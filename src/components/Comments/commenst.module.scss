@@ -1,0 +1,17 @@
+.wrapper{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .comment{
+    width: 500px;
+    height: 100%;
+    border: 2px solid #75c1ff;
+    padding: 10px;
+    color: #000;
+    margin-bottom: 10px;
+    background:  #eee;
+  }
+}
